@@ -1,9 +1,12 @@
 @import "tailwindcss";
 
 @theme {
+  --animate-ask-anything-shimmer: ask-anything-shimmer 2.8s linear infinite;
+
   --color-inset-surface: #110f19;
   --color-surface: #13111c;
   --color-surface-1: #181624;
+
   --shadow-inset:
     0px 1px 0px rgba(255, 255, 255, 0.02), 0px 0px 0px 1px
     rgba(255, 255, 255, 0.02);
@@ -28,4 +31,14 @@
 
   --text-lg: 1.0625rem; /* 17px */
   --text-lg--line-height: 1.5625rem; /* 25px */
+}
+
+@keyframes ask-anything-shimmer {
+  from {
+    background-position: -12rem 0;
+  }
+
+  to {
+    background-position: calc(100% + 12rem) 0;
+  }
 }
