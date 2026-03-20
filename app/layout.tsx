@@ -1,3 +1,4 @@
+import { clsx } from "clsx";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -22,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
+    <html lang="en" className={clsx(inter.variable, "antialiased")}>
       <body className="h-dvh flex flex-col overscroll-contain bg-surface text-white font-sans text-base">
         <header className="flex pl-4 pr-2">
           <div className="flex flex-1 items-center py-4 gap-4">

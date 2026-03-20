@@ -1,5 +1,6 @@
 "use client";
 
+import { clsx } from "clsx";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -10,58 +11,54 @@ export function NavigationClient() {
     <nav className="flex h-full">
       <NavigationLink
         href="/"
+        label="Architecture"
         active={activePath === "Architecture"}
         onClick={() => setActivePath("Architecture")}
-      >
-        Architecture
-      </NavigationLink>
+      />
       <NavigationLink
         href="/"
+        label="Observability"
         active={activePath === "Observability"}
         onClick={() => setActivePath("Observability")}
-      >
-        Observability
-      </NavigationLink>
+      />
       <NavigationLink
         href="/"
+        label="Logs"
         active={activePath === "Logs"}
         onClick={() => setActivePath("Logs")}
-      >
-        Logs
-      </NavigationLink>
+      />
       <NavigationLink
         href="/"
+        label="Settings"
         active={activePath === "Settings"}
         onClick={() => setActivePath("Settings")}
-      >
-        Settings
-      </NavigationLink>
+      />
     </nav>
   );
 }
 
 function NavigationLink({
   href,
+  label,
   active,
-
   onClick,
-  children,
 }: Readonly<{
   href: string;
+  label: string;
   active: boolean;
-
   onClick?: () => void;
-  children: React.ReactNode;
 }>) {
   return (
     <Link
       href={href}
       onClick={onClick}
-      className={`px-4 flex items-center ${
-        active ? "font-semibold text-white" : "font-normal text-white/50"
-      }`}
+      data-label={label}
+      className={clsx(
+        "px-4 inline-flex flex-col items-center justify-center after:invisible after:h-0 after:select-none after:overflow-hidden after:pointer-events-none after:font-semibold after:content-[attr(data-label)]",
+        active ? "font-semibold text-white" : "font-normal text-white/50",
+      )}
     >
-      {children}
+      {label}
     </Link>
   );
 }
