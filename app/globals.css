@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
-:root {
-  --color-surface: #13111c;
-}
-
-@theme inline {
+@theme {
   --color-surface: var(--color-surface);
+  --color-surface: #13111c;
+
   --font-sans: var(--font-inter);
-  --font-mono: var(--font-geist-mono);
+
+  --text-sm: 0.75rem; /* 12px */
+  --text-sm--line-height: 1.0625rem; /* 17px */
+
+  --text-base: 0.8125rem; /* 13px */
+  --text-base--line-height: 1.3125rem; /* 21px */
 }
