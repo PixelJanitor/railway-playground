@@ -1,40 +1,40 @@
-"use client"
+"use client";
 
-import { clsx } from "clsx"
-import Link from "next/link"
-import { useState } from "react"
+import { clsx } from "clsx";
+import Link from "next/link";
+import { useState } from "react";
 
 export function NavigationClient() {
-  const [activePath, setActivePath] = useState("Architecture")
+  const [activePath, setActivePath] = useState("Architecture");
 
   return (
-    <nav className='flex h-full'>
+    <nav className="flex h-full">
       <NavigationLink
-        href='/'
-        label='Architecture'
+        href="/"
+        label="Architecture"
         active={activePath === "Architecture"}
         onClick={() => setActivePath("Architecture")}
       />
       <NavigationLink
-        href='/'
-        label='Observability'
+        href="/"
+        label="Observability"
         active={activePath === "Observability"}
         onClick={() => setActivePath("Observability")}
       />
       <NavigationLink
-        href='/'
-        label='Logs'
+        href="/"
+        label="Logs"
         active={activePath === "Logs"}
         onClick={() => setActivePath("Logs")}
       />
       <NavigationLink
-        href='/'
-        label='Settings'
+        href="/"
+        label="Settings"
         active={activePath === "Settings"}
         onClick={() => setActivePath("Settings")}
       />
     </nav>
-  )
+  );
 }
 
 function NavigationLink({
@@ -43,10 +43,10 @@ function NavigationLink({
   active,
   onClick,
 }: Readonly<{
-  href: string
-  label: string
-  active: boolean
-  onClick: () => void
+  href: string;
+  label: string;
+  active: boolean;
+  onClick: () => void;
 }>) {
   return (
     <Link
@@ -60,5 +60,5 @@ function NavigationLink({
     >
       {label}
     </Link>
-  )
+  );
 }
