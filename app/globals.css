@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-surface: var(--color-surface);
+  --color-inset-surface: #110f19;
   --color-surface: #13111c;
+  --color-surface-1: #181624;
+  --shadow-inset:
+    0px 1px 0px rgba(255, 255, 255, 0.02), 0px 0px 0px 1px
+    rgba(255, 255, 255, 0.02);
+  --shadow-md:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 4px -1px rgba(0, 0, 0, 0.15),
+    0px 4px 8px -2px rgba(0, 0, 0, 0.15), 0px 8px 16px -4px rgba(0, 0, 0, 0.15),
+    0px 16px 32px -8px rgba(0, 0, 0, 0.15), 0px 16px 32px rgba(0, 0, 0, 0.15),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.05),
+    inset 0px 0px 0px 1px rgba(255, 255, 255, 0.02),
+    inset 0px 0px 16px rgba(255, 255, 255, 0.02);
 
   --font-sans: var(--font-inter);
 
@@ -11,4 +22,10 @@
 
   --text-base: 0.8125rem; /* 13px */
   --text-base--line-height: 1.3125rem; /* 21px */
+
+  --text-md: 0.9375rem; /* 15px */
+  --text-md--line-height: 1.4375rem; /* 23px */
+
+  --text-lg: 1.0625rem; /* 17px */
+  --text-lg--line-height: 1.5625rem; /* 25px */
 }
